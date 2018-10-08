@@ -27,12 +27,14 @@ public class Driver {
 		db.insert(r5);
 		db.insert(r6);
 
+		System.out.println("Displaying all records: ");
 		// print out all the records in the database
 		for (int i = 0; i < db.getNumberOfRecords(); i++) {
 			System.out.println(db.getRecord(i));
 		}
 		System.out.println("--------------------------------------------");
 
+		System.out.println("Displaying the double field values for the records: ");
 		// print out double values of all records in the database
 		for (int i = 0; i < db.getNumberOfRecords(); i++) {
 			System.out.println(db.getRecord(i).getDoubleField() + "");
@@ -40,14 +42,17 @@ public class Driver {
 
 		System.out.println("--------------------------------------------");
 
+		System.out.println("Locating the record with int value 4: ");
 		// finds and prints the record with ID 4
 		Record r = db.findRecordByIntField(4);
 		System.out.println(r);
 		System.out.println("--------------------------------------------");
 
 		// has to be between 2 and 5 inclusive
-		int intValue = 2;
+		int intValue = 5;
 
+		System.out.println(
+				"Locating records with int value less than or equal to " + intValue + " and printing their char values");
 		// output charField of all recorders with intField <= intValue
 		for (int i = 0; i < db.getNumberOfRecords(); i++) {
 			Record re = db.getRecord(i);
